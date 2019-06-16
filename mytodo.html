@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="./Css/todo.css">
+  <title>ccc My todolist ccc </title>
+</head>
+<body>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div id="app">
+    <h2>Liste de choses à faire:</h2>
+    <ol>
+      <li v-for="todo in todos">
+        <label>
+          <input type="checkbox"
+            v-on:change="toggle(todo)"
+            v-bind:checked="todo.done">
+
+          <del v-if="todo.done">
+            {{ todo.text }}
+          </del>
+          <span v-else>
+            {{ todo.text }}
+          </span>
+        </label>
+      </li>
+    </ol>
+  </div>
+
+<script type="text/javascript">
+  new Vue({
+    el: "#app",
+    data: {
+      todos: [
+        { text: "Learn html", done: true },
+        { text: "Learn Css", done: true },
+        { text: "Learn Javascript", done: false },
+        { text: "Watch a video introduction on Vue frameworks", done: false },
+        { text: "Build a website", done: true },
+        { text: "Watch a movie ", done: false },
+        { text: "Build something amazing", done: false }
+
+      ]
+    },
+    methods: {
+    	toggle: function(todo){
+      	todo.done = !todo.done
+      }
+    }
+  });
+  </script>
+<br />
+<div>
+   back 
+  </div>
+
+  <div id="google_translate_element" align="center"></div>
+  <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+          pageLanguage: 'auto',
+          autoDisplay: false,
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+      }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
